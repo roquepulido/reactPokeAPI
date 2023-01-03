@@ -18,8 +18,11 @@ function App() {
   
   return (
     <div className="App">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/250px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon" />
+      <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/250px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon" />
+      <div className="contenedor">
+
      {(poke == null)? <PokeballSpin />: poke.map(pokemon=><PokemonCard key={pokemon.name} name={pokemon.name} url={pokemon.url} />)}
+      </div>
     </div>
   )
 }

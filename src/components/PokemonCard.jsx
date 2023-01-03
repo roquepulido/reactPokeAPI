@@ -1,14 +1,21 @@
 import axios from 'axios'
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
+import PokeballSpin from './Pokeball';
+import "../css/PokemonCard.css";
 
 function PokemonCard({name, url}) {
     const [pokemonFicha, setPokemonFicha] = useState(null);
-    axios.get(url)
-    .then(respuesta=>{setPokemonFicha(respuesta)})
+
+    useEffect(()=>{
+      axios.get(url)
+    .then(respuesta=>setPokemonFicha(respuesta.data))
+      
+    },[]);  
+   
   return (
     <div className='fichaPokemon'>
-        <h1>{name}</h1>
-        <p>{JSON.stringify(pokemonFicha,"",2)}</p>
+      {(pokemonFicha == null)? <PokeballSpin />:<img src={pokemonFicha.sprites.other.dream_world.front_default} alt={name} /> }
+        <h2>{name}</h2>       
     </div>
   )
 }

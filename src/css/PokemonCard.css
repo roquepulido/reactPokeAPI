@@ -1,0 +1,17 @@
+.fichaPokemon{
+    margin: .5rem;
+    box-shadow: 14px 15px 26px -13px rgba(0,0,0,0.67);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fichaPokemon h2{
+    text-transform: capitalize;
+    margin: .5rem 0;
+}
+.fichaPokemon img{
+    width: 50%;
+}
